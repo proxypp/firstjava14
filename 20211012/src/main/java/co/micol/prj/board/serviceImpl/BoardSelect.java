@@ -17,6 +17,7 @@ public class BoardSelect implements Command {
 		System.out.println("조회할 글 번호를 입력하세요.");
 		board.setBId(scb.nextInt());
 		board = boardService.boardSelect(board);
+		boardService.boardHitUpdate(board.getBId());
 		
 		System.out.print(board.getBId() + " : ");
 		System.out.print(board.getBWriter() + " : ");

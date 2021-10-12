@@ -7,4 +7,5 @@ public interface BoardService { // 서비스 인터페이스.
 	int boardInsert(BoardVO vo);
 	int boardDelete(BoardVO vo);
 	int boardUpdate(BoardVO vo);
+	public void boardHitUpdate(int id);
 }

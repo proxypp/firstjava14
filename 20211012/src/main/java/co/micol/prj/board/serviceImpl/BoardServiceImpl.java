@@ -10,41 +10,46 @@ import co.micol.prj.board.service.BoardVO;
 import co.micol.prj.comm.DataSource;
 
 public class BoardServiceImpl implements BoardService {
-   private SqlSession sqlSession = DataSource.getInstance().openSession(true);
-   private BoardMapper map = sqlSession.getMapper(BoardMapper.class);
-   @Override
-   public List<BoardVO> boardSelectList() {
-      // TODO Auto-generated method stub
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
+	private BoardMapper map = sqlSession.getMapper(BoardMapper.class);
+
+	@Override
+	public List<BoardVO> boardSelectList() {
+		// TODO Auto-generated method stub
 //      return sqlSession.selectList("boardSelectList");
-	   return map.boardSelectList();
-   }
+		return map.boardSelectList();
+	}
 
-   @Override
-   public BoardVO boardSelect(BoardVO vo) {
-	   vo = map.boardSelect(vo);
-	   
+	@Override
+	public BoardVO boardSelect(BoardVO vo) {
+		vo = map.boardSelect(vo);
+
 //     return sqlSession.selectOne("boardSelect");
-	   return map.boardSelect(vo);
-   }
+		return map.boardSelect(vo);
+	}
 
-   @Override
-   public int boardInsert(BoardVO vo) {
-      // TODO Auto-generated method stub
-      return map.boardInsert(vo);
-   }
+	@Override
+	public int boardInsert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return map.boardInsert(vo);
+	}
 
-   @Override
-   public int boardUpdate(BoardVO vo) {
-      // TODO Auto-generated method stub
-      return map.boardUpdate(vo);
-   }
+	@Override
+	public int boardUpdate(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return map.boardUpdate(vo);
+	}
 
-   @Override
-   public int boardDelete(BoardVO vo) {
-      // TODO Auto-generated method stub
-      return map.boardDelete(vo);
-   }
-   private void hitUpdate(int id) { 
-	   
-   }
+	@Override
+	public int boardDelete(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return map.boardDelete(vo);
+	}
+
+	@Override
+	public void boardHitUpdate(int id) {
+		map.boardHitUpdate(id);
+
+	}
+
 }
